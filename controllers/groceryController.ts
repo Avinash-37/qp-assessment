@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { addGrocery, getAllGroceries, getGroceryById, updateGrocery, deleteGrocery } from "../services/groceryService";
 import {successResponse,alreadyExist,errorResponse} from "../helpers/apiResponse";
 
+
 export const createGrocery = async (req: Request, res: Response) => {
   try {
     const { name, price, quantity } = req.body;
@@ -11,6 +12,7 @@ export const createGrocery = async (req: Request, res: Response) => {
     errorResponse(res,"Error in createGrocery","","","",error.message);
   }
 };
+
 
 export const getGroceries = async (req: Request, res: Response) => {
   try {
